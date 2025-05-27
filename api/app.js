@@ -59,6 +59,43 @@ app.get('/workouts/:name', (request, response) => {
 
   });
 
+  ///////////////////////////////////////Endpoints for users table/////////////////////////////////////////////////////////////
+
+  async function getMaxUserID(){
+    return knex('users').max('user_id').first()
+  }
+
+  app.get('/users', (request, response) => {
+    knex('users')
+    .select('*')
+    .then(users => {
+      var userData = users.map(users => users)
+      response.json(userData)
+  });
+
+  });
+
+  app.post('/users', async (req, res) => {
+    const {First, Last, Age, Gender, Current_Weight, Goal} = req.body;
+    const user_id = await getMaxUserID();
+
+    const new_user = {
+      user_id: ++user_id.max,
+      First: First,
+      Last: Last,
+      Age: Age,
+      Gender: Gender,
+      Current_Weight: Current_Weight,
+      Goal: Goal
+    }
+
+    knex('users')
+    .insert(new_user)
+    .then(x => res.status(200).json(new_user))
+    .catch(err => res.status(500).send(err))
+
+  })
+
 
 
 

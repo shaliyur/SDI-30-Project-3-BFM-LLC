@@ -1,0 +1,19 @@
+{
+  "name": "sdi-30-proj3-bfm-llc",
+  "version": "1.0.0",
+  "description": "Project 3 for the Software Dev Immersive",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaliyur/SDI-30-Project-3-BFM-LLC.git"
+  },
+  "author": "team BFM-LLC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shaliyur/SDI-30-Project-3-BFM-LLC/issues"
+  },
+  "homepage": "https://github.com/shaliyur/SDI-30-Project-3-BFM-LLC#readme"
+}

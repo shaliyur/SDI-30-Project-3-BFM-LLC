@@ -76,7 +76,7 @@ app.get('/workouts/:name', (request, response) => {
   });
 
   app.post('/users', async (req, res) => {
-    const {First, Last, Age, Gender, Current_Weight, Goal} = req.body;
+    const {First, Last, Age, Gender, Current_Weight, Height_Inches, Goal} = req.body;
     const user_id = await getMaxUserID();
 
     const new_user = {
@@ -86,6 +86,7 @@ app.get('/workouts/:name', (request, response) => {
       Age: Age,
       Gender: Gender,
       Current_Weight: Current_Weight,
+      Height_Inches: Height_Inches,
       Goal: Goal
     }
 

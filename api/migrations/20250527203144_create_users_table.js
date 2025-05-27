@@ -10,6 +10,7 @@ exports.up = function(knex) {
     table.integer('Age');
     table.string('Gender');
     table.integer('Current_Weight');
+    table.integer('Height_Inches');
     table.string('Goal');
   })
 

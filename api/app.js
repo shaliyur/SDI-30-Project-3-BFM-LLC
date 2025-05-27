@@ -18,12 +18,29 @@ app.listen(port, () => {
 })
 
 app.get('/workouts', (request, response) => {
-  knex('workouts')
+  const {type} = request.query;
+
+  if (type !== undefined) {
+    knex.select()
+    .from('workouts')
+    .where({type: type})
+    .then(data => response.status(200).json(data))
+    .catch(err => {
+    res.status(404).json({
+      message: 'The exercise type is not available'
+    })
+  });
+
+  }
+  else {
+    knex('workouts')
     .select('*')
     .then(workouts => {
       var workoutData = workouts.map(workouts => workouts)
       response.json(workoutData)
-    })
+    });
+  }
+
 })
 
 app.get('/workouts/:name', (request, response) => {
@@ -34,7 +51,6 @@ app.get('/workouts/:name', (request, response) => {
   .from('workouts')
   .where({name: name})
   .then(data => response.status(200).json(data))
-  .then(data => console.log(data))
   .catch(err => {
     res.status(404).json({
       message: 'The exercise is not available'
@@ -42,4 +58,7 @@ app.get('/workouts/:name', (request, response) => {
   });
 
   });
+
+
+
 

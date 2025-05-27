@@ -21,7 +21,7 @@ exports.seed = async function(knex) {
     {workout_id: 11, type: 'Legs', name: 'Squat', rec_sets: 3, rec_reps: 10, image_url:''},
     {workout_id: 12, type: 'Legs', name: 'Leg Press', rec_sets: 3, rec_reps: 10, image_url:''},
     {workout_id: 13, type: 'Legs', name: 'Leg Extensions', rec_sets: 3, rec_reps: 10, image_url:''},
-    {workout_id: 14, type: 'Legs', name: 'Hamstring ', rec_sets: 3, rec_reps: 10, image_url:''},
+    {workout_id: 14, type: 'Legs', name: 'Hamstring Curl', rec_sets: 3, rec_reps: 10, image_url:''},
     {workout_id: 15, type: 'Legs', name: 'Calf Raises', rec_sets: 3, rec_reps: 10, image_url:''},
   ]);
 };

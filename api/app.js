@@ -127,7 +127,7 @@ app.get('/logs',(request, response) => {
     response.json(logData)
   })
   .catch(err => {
-    res.status(500).send(err)
+    response.status(500).send(err)
     console.log(err)
   })
 });

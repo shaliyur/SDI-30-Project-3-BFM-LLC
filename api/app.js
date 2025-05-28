@@ -13,9 +13,7 @@ app.get('/', (request, response) => {
   response.status(200).send('Your knex and express application is running successfully!')
 });
 
-app.listen(port, () => {
-  console.log('Your Knex and Express Application is running successfully!')
-})
+
 
 app.get('/workouts', (request, response) => {
   const {type} = request.query;
@@ -97,6 +95,83 @@ app.get('/workouts/:name', (request, response) => {
 
   })
 
+  app.delete('/users/:id', (request, response) => {
+    const {id} = request.params;
+
+    knex('users')
+      .where({ user_id: id })
+      .del()
+      .then((deletedUser) => {
+        if (deletedUser) {
+          response.status(200).json(`${id} has been deleted`)
+        } else {
+          response.status(400).json(`${id} does not exist`)
+        }
+      })
+      .catch((err) => {
+        response.status(500).json({error: err.message})
+      });
+  });
 
 
+///////////////////////////////////////Endpoints for workout log table/////////////////////////////////////////////////////////////
+async function getMaxLogID(){
+  return knex('workout_logs').max('Log_id').first()
+}
 
+app.get('/logs',(request, response) => {
+  knex('workout_logs')
+  .select('*')
+  .then(data => {
+    var logData = data.map(data => data)
+    response.json(logData)
+  })
+  .catch(err => {
+    res.status(500).send(err)
+    console.log(err)
+  })
+});
+
+app.post('/logs', async (req, res) => {
+  const {User_id, Date_recorded, Workout_type, Exercises} = req.body;
+  const log_id = await getMaxLogID();
+
+  const new_log = {
+    Log_id: ++log_id.max,
+    User_id: User_id,
+    Date_recorded: Date_recorded,
+    Workout_type: Workout_type,
+    Exercises: Exercises
+  }
+
+  knex('workout_logs')
+  .insert(new_log)
+  .then(x => res.status(200).json(new_log))
+  .catch(err => res.status(500).send(err))
+
+});
+
+  //{Log_id: 1, User_id: '1', Date_recorded: '26 May 2025', Workout_type: 'Legs',  Exercises: '{Exercise1: {name: Squat, weight: 225kg, sets: 3, reps: 12}, Exercise2: {name: Leg Press, weight: 400kg, sets: 4, reps: 15} Exercise3: {name: Hamstring Curl, weight: 120kg, sets: 3, reps: 10}}'}
+
+  app.delete('/logs/:id', (request, response) => {
+    const {id} = request.params;
+
+    knex('workout_logs')
+      .where({ Log_id: id })
+      .del()
+      .then((deletedLog) => {
+        if (deletedLog) {
+          response.status(200).json(`${id} has been deleted`)
+        } else {
+          response.status(400).json(`${id} does not exist`)
+        }
+      })
+      .catch((err) => {
+        response.status(500).json({error: err.message})
+      });
+  });
+
+
+app.listen(port, () => {
+  console.log('Your Knex and Express Application is running successfully!')
+})

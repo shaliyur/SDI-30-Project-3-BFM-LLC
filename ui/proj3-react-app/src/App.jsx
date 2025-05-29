@@ -1,34 +1,25 @@
-import { useState } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Routes, Route, Link, useNavigate } from 'react-router-dom'
 import './App.css'
+// import NavBar from './components/NavBar';
+// import LoginPage from './components/LoginPage';
+// import HomePage from './components/HomePage';
+import WorkoutsPage from './components/WorkoutsPage';
+// import UserLogsPage from './components/UserLogsPage';
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div>
+      {/* <NavBar /> */}
+      <Routes>
+        {/* <Route path="/login" element={<LoginPage key = {"Log-In"}/>}/>
+        <Route path="/home" element={<HomePage/>}/> */}
+        <Route path="/workoutspage" element={<WorkoutsPage/>}/>
+        {/* <Route path="/userlogspage" element={<UserLogsPage/>}/> */}
+      </Routes>
+    </div>
+)
+};
 
-export default App
+export default App;

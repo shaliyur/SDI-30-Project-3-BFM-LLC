@@ -1,11 +1,6 @@
 import { useState, useEffect,createContext} from 'react'
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom'
 import './App.css'
-// import NavBar from './components/NavBar';
-// import LoginPage from './components/LoginPage';
-// import HomePage from './components/HomePage';
-import WorkoutsPage from './components/WorkoutsPage';
-// import UserLogsPage from './components/UserLogsPage';
 
 import NavBar from './components/NavBar';
 import HomePage from './components/HomePage';

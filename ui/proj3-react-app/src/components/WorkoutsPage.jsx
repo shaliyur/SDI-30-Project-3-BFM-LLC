@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 
 
-
 export default function WorkoutsPage() {
   // const { id } = useParams()
   const [workouts, setWorkouts] = useState([])
@@ -38,3 +37,7 @@ export default function WorkoutsPage() {
     </div>
   )
 }
+
+
+
+

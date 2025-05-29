@@ -9,8 +9,6 @@ import UserLogsPage from './components/UserLogsPage';
 
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div>
       <Routes>
@@ -22,4 +20,5 @@ function App() {
 )
 };
 
+export default App;
 export default App;

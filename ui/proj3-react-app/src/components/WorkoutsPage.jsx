@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
+
 import React from 'react'
 import WorkoutCard from './WorkoutCard'
 import './WorkoutsPage.css'
 import './WorkoutCard.css'
+
 
 export default function WorkoutsPage() {
   // const { id } = useParams()
@@ -18,7 +20,10 @@ export default function WorkoutsPage() {
     .catch(error => console.error('error fetching workouts:', error))
   }, [])
 
+
+
   return (
+
     <div className="workouts-container">
       <h1 className="workout-list-h1">WORKOUT LIST</h1>
       {workouts.length > 0 ? (
@@ -33,6 +38,7 @@ export default function WorkoutsPage() {
     </div>
   )
 }
+
 //////////////WORKOUTCARD////////////////////////////
 
 
@@ -58,3 +64,4 @@ export default function WorkoutsPage() {
   //     <p>Loading Workouts...</p>
   //   )}
   // </div>
+

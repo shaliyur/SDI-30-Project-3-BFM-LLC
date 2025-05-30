@@ -1,5 +1,6 @@
 import React, { useState, useEffect, createContext, useRef } from 'react';
 import {BrowserRouter as Router, Routes, Route, Link, useNavigate} from 'react-router-dom';
+import NavBar from './NavBar';
 
 
 
@@ -42,6 +43,13 @@ export default function HomePage() {
 
   const handleChange = (event) => {
     const {name, value} = event.target;
+
+    if (name === 'Gender') {
+      setSelectedGender(value);
+    }
+     if (name === 'Goal') {
+      setSelectedGoal(value);
+    }
     setTemp(prevState => ({
       ...prevState,
       [name]: value
@@ -68,6 +76,7 @@ export default function HomePage() {
 
   return (
     <div className = 'homepage'>
+      <NavBar/>
       <header>
         <h1> Home Page </h1>
       </header>

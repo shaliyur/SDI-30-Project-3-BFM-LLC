@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import NavBar from './NavBar';
 
 
 export default function WorkoutsPage() {
@@ -15,8 +16,11 @@ export default function WorkoutsPage() {
     .catch(error => console.error('error fetching workouts:', error))
   }, [])
 
+
+
   return (
     <div style={{ padding: '2rem' }}>
+      <NavBar/>
       <h1>WORKOUT LIST</h1>
       {workouts.length > 0 ? (
         <ul>

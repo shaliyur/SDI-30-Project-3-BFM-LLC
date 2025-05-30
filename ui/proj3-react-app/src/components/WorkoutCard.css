@@ -1,0 +1,44 @@
+.workout-card {
+    background-color: rgba(128, 128, 128, 0.75);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.workout-card:hover {
+    transform: scale (1.03);
+}
+
+.workout-image {
+    width: 350px;
+    margin-top: 0.5rem;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.workout-video {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-weight: bold;
+    color: red;
+    text-decoration: underline;
+    font-size: 1.1rem;
+    transition: color 0.2s ease-in-out;
+}
+
+.workout-video:hover {
+  color: a61e4d;
+}
+
+.workout-description {
+    color: black;
+    font-size: 1rem;
+    margin: auto;
+}

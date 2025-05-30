@@ -19,7 +19,7 @@ exports.up = function(knex) {
  */
 exports.down = function(knex) {
 
-  return knex.schema.alterTable('workout_logs', table => {
+  return knex.schema.table('workout_logs', table => {
     table.dropForeign('User_id')
   })
   .then(function() {

@@ -20,7 +20,7 @@ body {
 .workout-list {
     grid: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    gap: 2rem;
     padding: 0%;
     margin: 2rem 0;
 }

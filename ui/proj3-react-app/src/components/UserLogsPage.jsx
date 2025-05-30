@@ -5,12 +5,7 @@ import NavBar from './NavBar';
 
 export default function UserLogsPage(){
   const [log, setLog] = useState({});
-  const [exercises, setExercises] = useState([{
-    name: 'bench press',
-    weight: 180,
-    sets: 3,
-    reps: 8
-  }]);
+  const [exercises, setExercises] = useState([]);
 
 
   const addExerciseOnClick = (event) => {
@@ -112,7 +107,9 @@ export default function UserLogsPage(){
 
           <button onClick = {addExerciseOnClick}>Add An Exercise!</button>
             {/* <button onClick = {handleClick}>Submit!</button> */}
-
+        <br></br>
+        <br></br>
+        <br></br>
         <button onClick ={handleSubmit}>Submit Workout!</button>
       </form>
     </div>

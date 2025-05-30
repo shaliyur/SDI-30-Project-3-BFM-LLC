@@ -1,4 +1,6 @@
 #root {
+  color: black;
+  background-color: rgb(250, 248, 248, 0.9);
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;

@@ -4,6 +4,7 @@ import React from 'react'
 import WorkoutCard from './WorkoutCard'
 import './WorkoutsPage.css'
 import './WorkoutCard.css'
+import NavBar from './NavBar';
 
 
 export default function WorkoutsPage() {
@@ -25,6 +26,7 @@ export default function WorkoutsPage() {
   return (
 
     <div className="workouts-container">
+      <NavBar/>
       <h1 className="workout-list-h1">WORKOUT LIST</h1>
       {workouts.length > 0 ? (
         <div className="workout-list">

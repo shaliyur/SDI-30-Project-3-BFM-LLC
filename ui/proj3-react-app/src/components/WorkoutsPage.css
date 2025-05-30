@@ -1,0 +1,33 @@
+body {
+    margin: 0%;
+    padding: 0%;
+    background-image: url('https://as2.ftcdn.net/jpg/03/51/09/29/1000_F_351092935_pOu0iS396drNWuY3P35h2Nz0A1KpiJkN.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.workouts-container {
+    display: grid;
+    max-width: 900px;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.workout-list {
+    grid: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 0%;
+    margin: 2rem 0;
+}
+
+.workout-list-h1 {
+    text-align: center;
+    text-shadow: darkblue;
+    color: black;
+    text-decoration: underline;
+}

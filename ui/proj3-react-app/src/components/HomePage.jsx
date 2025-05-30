@@ -7,6 +7,7 @@ import NavBar from './NavBar';
 export default function HomePage() {
   const [user, setUser] = useState({});
   const [temp, setTemp] = useState({});
+
   const [selectedGender, setSelectedGender]= useState(null);
   const [selectedGoal, setSelectedGoal]= useState(null);
 
@@ -125,4 +126,5 @@ export default function HomePage() {
     </div>
     );
   }
+
 

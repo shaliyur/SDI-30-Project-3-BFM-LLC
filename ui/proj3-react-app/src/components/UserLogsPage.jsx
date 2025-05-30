@@ -1,5 +1,6 @@
 import React, { useState, useEffect, createContext } from 'react';
 import {BrowserRouter as Router, Routes, Route, Link, useNavigate} from 'react-router-dom';
+
 import NavBar from './NavBar';
 
 export default function UserLogsPage(){
@@ -196,4 +197,5 @@ export default function UserLogsPage(){
 // )
 
 // };
+
 
